@@ -30,7 +30,7 @@ RUN apt update && \
     echo "deb http://ftp.br.debian.org/debian/ wheezy main" >> /etc/apt/sources.list && \
     echo oracle-java8-installer shared/accepted-oracle-license-v1-1 select true | /usr/bin/debconf-set-selections && \
     apt update && \
-    apt -y -q install x2go-keyring x2goserver x2goserver-xsession mate-desktop-environment qasmixer qashctl qasconfig pavucontrol mate-themes libglu1-mesa lib32z1 lib32ncurses5 libfreetype6:i386 libsm6:i386 libxrender1:i386 libfontconfig1:i386 libxext6:i386 okular apt-xapian-index synaptic libreoffice libreoffice-l10n-pt-br fluidsynth vlc-plugin-fluidsynth qsynth fluid-soundfont-gm audacity gdebi-core libappindicator1 libdbusmenu-glib4 libdbusmenu-gtk4 libindicator7 x2goclient x2gousbmount x2goserver-fmbindings xournal kolourpaint4 oracle-java8-installer oracle-java8-set-default spotify-client fritzing fritzing-data fritzing-parts kicad ipython ipython3 glade python-glade2 geogebra latexila dia inkscape kdenlive gimp kile arduino pinta gajim gajim-omemo gajim-triggers gajim-httpupload gajim-urlimagepreview pulseaudio-equalizer pitivi gnuradio gqrx-sdr virt-manager libvirt0 playonlinux wine winetricks libxft2:i386 git clementine r-base r-base-dev less cmake libpng16-16 libpng16-16:i386 vivaldi-stable unrar cutecom graphviz python-vte bridge-utils uml-utilities ipython3-qtconsole scratch squeak-vm squeak-plugins-scratch geany mcu8051ide qt4-designer spyder3 kalzium logisim grass tracker wxmaxima prerex vprerex rsyslog pcb maxima cantor google-chrome-stable opera-stable googleearth-package hexchat hexchat-otr hexchat-perl hexchat-plugins hexchat-python3 qgis qgis-common qgis-providers-common qgis-server ipython-qtconsole distcc nemiver mysql-workbench && \
+    apt -y -q install x2go-keyring x2goserver x2goserver-xsession xfce4 xfce4-goodies xfce4-screenshooter xfce4-notes-plugin xfce4-terminal xfce4-datetime-plugin xfce4-topmenu-plugin xfce4-whiskermenu-plugin qasmixer qashctl qasconfig pavucontrol libglu1-mesa lib32z1 lib32ncurses5 libfreetype6:i386 libsm6:i386 libxrender1:i386 libfontconfig1:i386 libxext6:i386 okular apt-xapian-index synaptic libreoffice libreoffice-l10n-pt-br fluidsynth vlc-plugin-fluidsynth qsynth fluid-soundfont-gm audacity gdebi-core libappindicator1 libdbusmenu-glib4 libdbusmenu-gtk4 libindicator7 x2goclient x2gousbmount x2goserver-fmbindings xournal kolourpaint4 oracle-java8-installer oracle-java8-set-default spotify-client fritzing fritzing-data fritzing-parts kicad ipython ipython3 glade python-glade2 geogebra latexila dia inkscape kdenlive gimp kile arduino pinta gajim gajim-omemo gajim-triggers gajim-httpupload gajim-urlimagepreview pulseaudio-equalizer pitivi gnuradio gqrx-sdr virt-manager libvirt0 playonlinux wine winetricks libxft2:i386 git clementine r-base r-base-dev less cmake libpng16-16 libpng16-16:i386 vivaldi-stable unrar cutecom graphviz python-vte bridge-utils uml-utilities ipython3-qtconsole scratch squeak-vm squeak-plugins-scratch geany mcu8051ide qt4-designer spyder3 kalzium logisim grass tracker wxmaxima prerex vprerex rsyslog pcb maxima cantor google-chrome-stable opera-stable googleearth-package hexchat hexchat-otr hexchat-perl hexchat-plugins hexchat-python3 qgis qgis-common qgis-providers-common qgis-server ipython-qtconsole distcc nemiver mysql-workbench galculator && \
     apt -y -q install -t stretch-backports octave liboctave-dev && \
     cp /usr/lib/i386-linux-gnu/libpng16.so.16 /lib/i386-linux-gnu/libpng12.so.0 && \
     cp /usr/lib/x86_64-linux-gnu/libpng16.so.16 /lib/x86_64-linux-gnu/libpng12.so.0 && \
@@ -48,17 +48,17 @@ RUN apt update && \
     wget https://github.com/KELiON/cerebro/releases/download/v0.3.1/cerebro_0.3.1_amd64.deb && \
     dpkg -i cerebro_0.3.1_amd64.deb && \
     rm -r cerebro_0.3.1_amd64.deb && \
-    wget 10.10.10.112/musixmatch_0.19.4_amd64.deb && \
+    wget jpmsb.ml/musixmatch_0.19.4_amd64.deb && \
     bash -c 'echo -e "y\n" |gdebi musixmatch_0.19.4_amd64.deb' && \
     rm musixmatch_0.19.4_amd64.deb && \
-    wget 10.10.10.112/google-earth-stable_current_amd64.deb && \
+    wget jpmsb.ml/google-earth-stable_current_amd64.deb && \
     dpkg -i google-earth-stable_current_amd64.deb && \
     rm google-earth-stable_current_amd64.deb && \
-    wget 10.10.10.112/armazenamento-mate -O /usr/local/bin/armazenamento && \
+    wget 1jpmsb.ml/armazenamento-xfce -O /usr/local/bin/armazenamento && \
     chmod 700 /usr/local/bin/armazenamento && \
-    wget 10.10.10.112/Ftool.exe -O /usr/local/bin/Ftool.exe && \
-    wget 10.10.10.112/ftoolicon.png -O /usr/share/icons/ftoolicon.png && \
-    wget 10.10.10.112/ftool.desktop -O /usr/share/applications/ftool.desktop && \
+    wget jpmsb.ml/Ftool.exe -O /usr/local/bin/Ftool.exe && \
+    wget jpmsb.ml/ftoolicon.png -O /usr/share/icons/ftoolicon.png && \
+    wget jpmsb.ml/ftool.desktop -O /usr/share/applications/ftool.desktop && \
     apt -y -q install mu && \
     echo "# deb http://archive.raspberrypi.org/debian/ stretch main ui" > /etc/apt/sources.list.d/raspi.list && \
     apt update && \
@@ -250,9 +250,6 @@ RUN apt update && \
     echo "Comment=Cmap Tools" >> /usr/share/applications/cmap.desktop && \
     echo "Exec=/opt/IHMCCmapTools/bin/CmapTools" >> /usr/share/applications/cmap.desktop && \
     echo "Icon=/opt/IHMCCmapTools/cmap-logo.png" >> /usr/share/applications/cmap.desktop && \
-    echo "Terminal=false" >> /usr/share/applications/cmap.desktop && \
-    echo "Type=Application" >> /usr/share/applications/cmap.desktop && \
-    echo "Categories=Development" >> /usr/share/applications/cmap.desktop && \
     echo "#!/usr/bin/env xdg-open" >> /usr/share/applications/android-studio.desktop && \
     echo "[Desktop Entry]" >> /usr/share/applications/android-studio.desktop && \
     echo "Type=Application" >> /usr/share/applications/android-studio.desktop && \
@@ -262,6 +259,9 @@ RUN apt update && \
     echo "Name=Android Studio" >> /usr/share/applications/android-studio.desktop && \
     echo "Comment=Desenvolvimento de aplicativos para Smartphones Android" >> /usr/share/applications/android-studio.desktop && \
     echo "Icon=/opt/ANDROID3/android-studio/bin/studio.png" >> /usr/share/applications/android-studio.desktop && \
+    echo "Terminal=false" >> /usr/share/applications/cmap.desktop && \
+    echo "Type=Application" >> /usr/share/applications/cmap.desktop && \
+    echo "Categories=Development" >> /usr/share/applications/cmap.desktop && \
     echo "export LM_LICENSE_FILE=1800@vm-lan2.sj.ifsc.edu.br" >> /etc/bash.bashrc && \
     echo "export MGLS_LICENSE_FILE=1800@vm-lan2.sj.ifsc.edu.br" >> /etc/bash.bashrc && \
     echo "export LD_LIBRARY_PATH=/opt/altera/13.0sp1/lib32" >> /etc/bash.bashrc && \
@@ -278,10 +278,6 @@ RUN apt update && \
     echo 'ALL   ALL=(root) NOPASSWD: /usr/sbin/tcpdump' >> /etc/sudoers && \
     echo 'ALL   ALL=(root) NOPASSWD: /usr/bin/wireshark' >> /etc/sudoers && \
     echo 'ALL   ALL=(root) NOPASSWD: /bin/chmod 1766 /dev/kvm' >> /etc/sudoers && \
-    echo "#!/bin/bash" >> /etc/iniciar && \
-    echo "" >> /etc/iniciar && \
-    echo "rsyslogd" >> /etc/iniciar && \
-    echo "/usr/sbin/sshd -D" >> /etc/iniciar && \
     echo "PermitRootLogin prohibit-password" > /etc/ssh/sshd_config && \
     echo "PasswordAuthentication no" >> /etc/ssh/sshd_config && \
     echo "ChallengeResponseAuthentication no" >> /etc/ssh/sshd_config && \
@@ -305,5 +301,5 @@ RUN apt update && \
     apt clean cache && \
     rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/* /var/log/* /root/.bash_history && \
     mkdir /var/run/sshd
-    
-    ENTRYPOINT rm -rf /var/run/rsyslogd.pid && rsyslogd && service libvirtd start && /usr/sbin/sshd -D
+
+ENTRYPOINT rm -rf /var/run/rsyslogd.pid && rsyslogd && service libvirtd start && /usr/sbin/sshd -D
